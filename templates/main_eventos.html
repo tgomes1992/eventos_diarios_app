@@ -1,0 +1,56 @@
+{% extends 'main_template.html' %}
+
+{% block content %}
+    <h1>Eventos Diários - Outros Ativos</h1>
+    <h3> Dia Atual : {{ dia }}</h3>
+
+
+
+    <form method="post" action="">
+
+        <input type="date" name="data">
+        <input type="submit" value="Periodo Especifico">
+    </form>
+
+
+
+    <h2 class="box">Eventos Hoje</h2>
+
+
+    <table class="striped">
+        <thead>
+            <th> Ativo </th>
+            <th> Emissor </th>
+            <th>  Data base</th>
+            <th> Data de Liquidação  </th>
+
+        </thead>
+
+        {% for evento in eventos %}
+        <tr>   
+            
+            <td>{{evento.ativo}}</td>
+
+            <td>{{evento.emissor}}</td>
+
+            <td>{{evento.data_base.strftime('%d/%m/%Y') }}</td>
+
+            <td>{{evento.data_liquidacao.strftime('%d/%m/%Y')}}</td>
+
+
+         
+
+        </tr>
+
+        {% endfor %}
+    </table>
+
+
+
+
+    </h2>
+    </div>
+
+
+
+    {% endblock %}

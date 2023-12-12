@@ -1,0 +1,64 @@
+{% extends 'main_template.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>{{dados['nome_adm']}}</h1>
+</div>
+
+
+<div >
+    <form action="#" method="post" class="col s12">
+        <div class="row">
+            <div class="input-field col s4">
+                <label for="centaurus">Centaurus</label>
+                <input type="text" id="centaurus" name="centaurus" value="{{dados['administrativos'].centaurus}}"  />
+            </div>
+            <div class="input-field col s4">
+                <label for="Pegasus">Pegasus</label> 
+                <input type="text" id="pegasus" name="pegasus" value="{{dados['administrativos'].pegasus}}"/>
+            </div>
+            <div class="input-field col s4">
+                <label for="o2">O2</label>
+                <input type="text" id="o2" name="o2" value="{{dados['administrativos'].o2}}"/>
+            </div>
+        </div>  
+        <div class="row">
+            <div class="input-field col s4">
+                <label for="jcot">Jcot</label>
+                <input type="text" id="jcot" name="jcot" value="{{dados['administrativos'].jcot}}"/>
+            </div>
+              <div class="input-field col s4">
+                <select name=tipocota>
+                    <option value=""></option>
+
+                    
+
+                    {% for tipo in dados['tiposcota'] %}
+
+                        {% if tipo == dados['administrativos'].tipo %}
+
+                        <option value="{{tipo}}" selected>{{tipo}}</option>
+
+                        {% else %}
+
+                        <option value="{{tipo}}">{{tipo}}</option>
+
+                        {% endif %}
+
+                    {% endfor %}
+
+
+                </select>
+                <label>Tipo Cota</label>
+              </div>
+            <button class="btn waves-effect waves-light" type="submit" >Concluir Edição</button>
+        </div>
+    </form>
+</div>
+
+
+
+{% endblock %}
+

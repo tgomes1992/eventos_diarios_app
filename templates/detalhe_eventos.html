@@ -1,0 +1,74 @@
+{% extends 'main_template.html' %}
+
+{% block content %}
+
+<h1>Cotas Diárias</h1>
+
+
+
+<div class="row col s12" >
+
+<h2>Busca / Gerenciamento de Cotas</h2>
+
+</div>
+
+
+<div >
+    <form action="#" method="post" class="col s12">
+        <div class="row">
+            <div class="input-field col s6">
+                <label for="data">Data</label>
+                <input type="text" id="data" name="data"/>
+            </div>
+            <div class="input-field col s6">
+                <select name="papelcota">
+                  <option value="" selected>Selecione o Papel Cota</option>
+
+                    {% for papelcota in dados['papelcota'] %}
+
+                        <option value={{papelcota.id}}>{{papelcota.centaurus}}</option>
+
+
+                    {% endfor %}
+ 
+                </select>
+                <label>Fundo</label>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light" type="submit" >Buscar</button>
+        </div>
+    </form>
+</div>
+
+
+<div>
+
+    
+<table>
+    <tr>
+        <th>Data</th>
+        <th>Valor</th>
+    </tr>
+
+    
+{% for cota in dados['cotas']  %}
+
+    <tr>
+        <td>{{ cota['data'] }}</td>
+        <td>{{ cota['valor'] }}</td>
+        <td><a href="#">Excluir</a></td>
+    </tr>
+{% endfor %}
+</table>
+
+
+
+
+</div>
+
+
+
+
+{% endblock %}
+

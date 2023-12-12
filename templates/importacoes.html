@@ -1,0 +1,40 @@
+{% extends 'main_template.html' %}
+
+{% block content %}
+
+<h1>Importação de Arquivos</h1>
+
+
+
+<div class="row col s12" >
+
+    <form action="#" method="post">
+        <div class="file-field col s6 input-field">
+        <div class="btn">
+            <span>Arquivo</span>
+            <input type="file">
+        </div>
+        <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+        </div>
+        </div>
+        <div class="input-field col s6">
+            <select name=fundo>
+            
+                <option value="" selected >Selecione o tipo de importação</option>
+                <option value="fundos" selected >Fundos</option>
+                <option value="papelcota">Papel Cota</option>
+                <option value="cotas">Cotas diárias</option>
+
+            </select>
+            <label>Fundot</label>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" >Importar</button>
+    </form>
+
+</div>
+
+
+
+{% endblock %}
+
